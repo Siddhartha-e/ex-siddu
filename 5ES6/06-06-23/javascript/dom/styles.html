@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Styles</title>
+        <style>
+            .myclass{
+                color:red;
+                text-align: center;
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <h2> Style Example</h2>
+        <p id="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum, voluptatum beatae maxime, debitis dignissimos nam ducimus, accusantium ea ullam dolores nulla eum assumenda. Optio sed soluta laudantium beatae enim?
+        </p>
+        <hr/>
+        <p id="target"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quod corporis impedit voluptate ea odit dolorem ut quaerat officiis provident maxime porro assumenda quisquam, vitae sed! Distinctio similique eum facilis?</p>
+        <button id="btn">Add</button>
+        <script>
+            var btn=document.getElementById("btn");
+            btn.addEventListener("click",function(){
+               var para=document.getElementById("target");
+               var para1=document.getElementById("para");
+               para.style.color='green'
+               para.style.backgroundColor='pink';
+               para1.classList.add('myclass');
+            })
+
+        </script>
+    </body>
+</html>

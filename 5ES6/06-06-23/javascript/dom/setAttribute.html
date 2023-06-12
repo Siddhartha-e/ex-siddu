@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Set Attribute</title>
+    </head>
+    <body>
+        <h2> Set Attribute Example</h2>
+        <img src="./images/1.jpg" width="200" height="150" id="imm"/> <br/>
+        <button id="btn">Add</button>
+        <script>
+            var btn=document.getElementById("btn");
+            btn.addEventListener("click",function(){
+                 btn.setAttribute("name","add")
+                 btn.setAttribute("disabled",true)
+                 var imm=document.getElementById("imm");
+                 imm.setAttribute("src","./images/2.jpg")
+                 imm.setAttribute("width","300")
+                 imm.setAttribute("height","200")
+                 //get and remove attribute 
+                 btn.removeAttribute("name");
+                 var value=imm.getAttribute("src");
+                 console.log(value);
+            })
+
+        </script>
+    </body>
+</html>

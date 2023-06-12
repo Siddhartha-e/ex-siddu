@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> IIFE Example</title>
+    </head>
+    <body>
+        <h2>IIFE Example</h2>
+       
+        <script>
+        //    let message=(function(){
+        //       var name="anuj";
+        //       console.log(name);
+        //    })();
+        let calculater=function(){
+            return {
+                 add:function(a,b){
+                    return (a+b)
+                 },
+                 sub:function(a,b){
+                    return (a-b)
+                 }
+            }
+        }();
+        console.log(calculater.add(10,5));//15
+        console.log(calculater.sub(10,5));//5
+          
+        </script>
+    </body>
+</html>

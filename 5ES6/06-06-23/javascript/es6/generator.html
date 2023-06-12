@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Generator Example</title>
+    </head>
+    <body>
+        <h2> Generator Example</h2>
+        <script>
+            function *gen(){
+                //console.log("before first yield")
+                yield 200;//pause 
+                //console.log("before second yield")
+                yield 400;//pause
+               // console.log("before return")
+                yield  "Hello";//exit  
+            }
+            const genobj=gen();
+            // console.log(genobj.next());//{value:200,done:false}
+            // console.log(genobj.next());//{value:400,done:false}
+            // console.log(genobj.next());//{value:Hello,done:true}
+            //iteration through generator 
+            for(const i of genobj)//return value is not coming through loop
+            {
+                console.log(i)
+            }
+        </script>
+    </body>
+</html>

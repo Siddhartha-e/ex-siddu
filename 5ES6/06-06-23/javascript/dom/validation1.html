@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Validation</title>
+    </head>
+    <body>
+        <h2> Form Validation</h2>
+        <form method="post" id="myForm">
+            Name : <input type="text" id="name"/><br/>
+            Mobile : <input type="text" id="mobile"/><br/>
+            Email : <input type="text" id="email"/><br/> 
+            <input type="submit" value="Send"/>
+        </form>
+        <script>
+            var myForm=document.getElementById("myForm");
+            myForm.addEventListener("submit",function(event){
+                event.preventDefault();
+                var name=document.getElementById("name");
+                var mobile=document.getElementById("mobile");
+                var email=document.getElementById("email");
+                //regular expression 
+                var regexName=/^[a-z ]+$/;
+                var regexMobile=/^[6-9][0-9]{9}$/;
+                var regexEemail=/^[a-zA-Z0-9\._]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
+                 if(name.value=="" || !regexName.test(name.value)){
+                    alert("Please enter your correct name");
+                    name.focus()
+                    return false;
+                }
+                if(mobile.value=="" || !regexMobile.test(mobile.value)){
+                    alert("Please enter your correct mobile");
+                    mobile.focus()
+                    return false;
+                }
+                if(email.value=="" || !regexEemail.test(email.value)){
+                    alert("Please enter your correct email");
+                    email.focus()
+                    return false;
+                }
+                alert("Form Submit")
+            })
+        </script>
+    </body>
+</html>

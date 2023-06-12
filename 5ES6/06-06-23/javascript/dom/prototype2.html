@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Prototype Example</title>
+    </head>
+    <body>
+        <h2>Prototype Example</h2>
+        <script>
+         function Student(){
+             this.name="Anuj";
+             this.gender="male"
+         }
+         Student.prototype.age=15;
+         var stud1=new Student();
+        //  stud1.age=15;
+         console.log(stud1.age);//15
+         var stud2=new Student();
+         console.log(stud2.age);//undefined
+        </script>
+    </body>
+</html>

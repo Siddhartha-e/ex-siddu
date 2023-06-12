@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Class Example</title>
+    </head>
+    <body>
+        <h2> Class Inhertiance Example</h2>
+        <script>
+           //parent class 
+            class A{
+                 abc(){
+                    return "Html"
+                 }
+            }
+           //child class
+           class B extends A 
+           {
+               xyz(){
+                 let x="Css";
+                 let y=super.abc();//Html 
+                 console.log(`${x} and ${y} are used to create design`)
+               }
+           }
+           const obj=new B();//instance
+           obj.xyz();//Css and Html are used to create design
+        </script>
+    </body>
+</html>

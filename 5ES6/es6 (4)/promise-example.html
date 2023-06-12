@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Promise example</title>
+</head>
+
+<body>
+    <h2>Promise Example</h2>
+    <script>
+      function getUsers(userId){
+        return new Promise((resolve,reject)=>{
+            console.log("get user details");
+           setTimeout(()=>{
+              resolve({
+                  userId:userId,
+                  username:"anuj"
+               })
+           },2000)
+        })  
+      }
+      function getServices(users){
+        return new Promise((resolve,reject)=>{
+            console.log("Get services of the user")
+          setTimeout(()=>{
+            resolve(["A","B","C","D"])
+          },3000)
+        })
+      }
+      function getServiceCost(services){
+        return new Promise((resolve,reject)=>{
+            console.log("FInd service cost")
+          setTimeout(()=>{
+              resolve(services.length*300)
+          },4000)
+        })
+      }
+      getUsers(101)
+      .then(getServices)
+      .then(getServiceCost)
+      .then(cost=>{
+         console.log("The cost is "+cost)
+      })
+      .catch(err=> console.log(err))
+      
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Callback example</title>
+</head>
+
+<body>
+    <h2>Callback Example</h2>
+    <script>
+      function mainFunction(callback){
+           console.log("Performiung operations...");
+            setTimeout(()=>{
+                callback("Operation Complete")
+            },2000)
+       }
+       function callbackFunction(result){
+          console.log("Result : "+result);
+       }
+       mainFunction(callbackFunction)
+    </script>
+</body>
+
+</html>

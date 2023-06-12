@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Product Crud Application</title>
+    </head>
+    <body>
+        <h2 align="center"> Products Crud Application</h2>
+        <table border="1" width="80%" align="center" id="target"> 
+        </table>
+        <script>
+            const API="http://localhost:3001/products";
+            (async function(){
+                try{
+                    let target=document.getElementById("target");
+                    let resData=await fetch(API);
+                    let postData=await resData.json();
+                    let str='';
+                    str+=`
+                    <tr><th colspan='5'><a href='addproduct.html'>Add Product</a></th></tr><tr>
+                           <th> S.no</th>
+                           <th> Name </th>
+                           <th> Price </th>
+                           <th> Quantity</th>
+                           <th> Action</th>
+                          </tr>`
+                    postData.forEach((post,ind)=>{
+                       str+=`<tr><td> ${ind+1}</td> <td> ${post.name}</td><td> ${post.price}</td><td> ${post.quantity}</td><td>
+                          <input type='button' value='Delete' onclick='delPro(${post.id})'/>
+                        </td></tr>`
+                    })
+                    target.innerHTML=str;
+                }
+                catch(err){
+                    console.log("Error : "+err)
+                }
+            })();
+            function delPro(id){
+                if(confirm("Do u want to delete?")){
+                    fetch(`${API}/${id}`,{
+                        method:'DELETE'
+                    })
+                    .then(res=> res.json())
+                    .then(data=> {
+                         if(data){
+                            alert("Product Deleted")
+                            window.location.href="index.html"
+                         }
+                    })
+                    .catch(err=> console.log(err))
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Async Await example</title>
+    </head>
+    <body>
+        <h2> Async await example</h2>
+        <a href="./querystring.html?con=1&id=123"> Get Data</a>
+        <script>
+            console.log(location.port)
+            // async function abc(){
+            //      let y=await "hello world";
+            //      console.log(y)
+            // }
+            // abc();
+            async function fetchData(){
+                try{
+                 const API="http://jsonplaceholder.typicode.com/posts";
+                 const resData=await fetch(API);
+                 const data=await resData.json();
+                 console.log(data)
+                }
+                catch(err){
+                    console.log("Error : "+err);
+                }
+            }
+            fetchData();
+        </script>
+    </body>
+</html>

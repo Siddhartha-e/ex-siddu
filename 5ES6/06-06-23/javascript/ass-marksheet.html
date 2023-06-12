@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+    <body>
+        <h2> Marksheet</h2>
+        <script>
+              var eng=78;
+              var hin=89;
+              var math=78;
+              var sci=70;
+              var sst=68;
+              var total=eng+hin+math+sci+sst;
+              var per=(total/500)*100;
+              if(per>80){
+                grade="A";
+              }
+              else if(per>60 && per<=80){
+                grade="B";
+              }
+              else if(per>45 && per<=60){
+                grade="C";
+              }
+              else{
+                 grad="Fail"
+              }
+              document.write("The total is "+total);
+              document.write("<br/> The percentage is "+per);
+              document.write("<br/> The Grade is "+grade)
+        </script>
+    </body>
+</html>

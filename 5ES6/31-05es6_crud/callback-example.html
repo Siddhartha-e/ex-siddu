@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Callback example</title>
+</head>
+
+<body>
+    <h2>Callback Example</h2>
+    <script>
+      function getUsers(userId,callback){
+           console.log("get user details");
+           setTimeout(()=>{
+               callback({
+                  userId:userId,
+                  username:"anuj"
+               })
+           },2000)
+      }
+      function getServices(users,callback){
+          console.log("Get services of the user")
+          setTimeout(()=>{
+             callback(["A","B","C","D"])
+          },3000)
+      }
+      function getServiceCost(services,callback){
+          console.log("FInd service cost")
+          setTimeout(()=>{
+              callback(services.length*300)
+          },4000)
+      }
+      getUsers(101,(users)=>{
+          getServices(users,(services)=>{
+             getServiceCost(services,(cost)=>{
+                 console.log("The cost of service is "+cost)
+             })
+          })
+      })
+    </script>
+</body>
+
+</html>

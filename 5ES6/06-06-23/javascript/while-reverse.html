@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2> While reverse Example</h2>
+        <script>
+           var num=123456;
+           var rev=0;
+           var sum=0;
+           while(num>=1){
+              x=num%10;// 4 3 2 1
+              rev=(rev*10)+x; //4 43 432 4321
+              sum=sum+x; //4 7 9 10
+              num=parseInt(num/10); //123 12 1
+           }
+     document.write("The reverse is "+rev+" and sum of digits is "+sum);
+        </script>
+    </body>
+</html>

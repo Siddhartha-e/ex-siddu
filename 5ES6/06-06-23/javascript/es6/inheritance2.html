@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Class Example</title>
+    </head>
+    <body>
+        <h2> Class Inhertiance Example</h2>
+        <script>
+           //parent class 
+            class Person{
+                constructor(name){
+                    this.name=name;
+                }
+                greet(){
+                    console.log(`Hello ${this.name}`)
+                }
+            }
+           //child class
+           class Student extends Person{
+              constructor(name){
+                 super(name);//assign to parent constructor
+              }
+           }
+           const student1=new Student("Amit");
+           student1.greet();
+        </script>
+    </body>
+</html>

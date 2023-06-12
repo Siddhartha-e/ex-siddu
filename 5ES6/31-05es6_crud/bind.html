@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Bind example</title>
+</head>
+
+<body>
+    <h2> Bind Example</h2>
+    
+    <script>
+    //    let myData={
+    //       fname:"anuj",
+    //       lname:"singh",
+    //     getFullName:function(){
+    //         return `${this.fname} ${this.lname}`
+    //     }
+    //    }
+    //    let getDetails=function(){
+    //       console.log(this.getFullName()+' is access from myData')
+    //    }
+    //    let Details=getDetails.bind(myData);
+    //    Details();
+    let car={
+          registrationNumber:"123456",
+          brand:'Ford',
+          displaydetails:function(ownwrName){
+             console.log(ownwrName+" this is your car "+ this.registrationNumber+" "+this.brand)
+          }
+    }
+    let myCarDetails=car.displaydetails.bind(car,"Amit");
+    myCarDetails();
+    </script>
+</body>
+
+</html>

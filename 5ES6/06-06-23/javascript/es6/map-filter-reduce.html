@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Map | Filter | Reduce Example</title>
+    </head>
+    <body>
+        <h2>  Map | Filter | Reduce Example</h2>
+        <script>
+           let arr=[2,3,4,5,6];
+           let newArr=arr.map(val=> val*2);
+           console.log(newArr)
+           let arr1=[2,3,4,5,6];
+           let newArr1=arr1.filter(val=> val%2==0);
+           console.log(newArr1)
+           //more filter example 
+           let empData=[
+              {id:1,name:"A",salary:45000},
+              {id:2,name:"B",salary:35000},
+              {id:3,name:"C",salary:55000},
+              {id:4,name:"D",salary:25000}
+           ];
+           //find emp whose salary is greater then 40000
+           let filterData=empData.filter(emp=> emp.salary>40000);
+        //    let filterData=empData.filter(function(emp){
+        //       return emp.salary>40000
+        //    })
+           console.log(filterData)
+           let arr2=[2,3,4,5,6];
+         let result=arr2.reduce((a,b)=>{
+        //   console.log(a+"---"+b)
+           return (a*b);
+         })
+         console.log(result);//720
+        </script>
+    </body>
+</html>

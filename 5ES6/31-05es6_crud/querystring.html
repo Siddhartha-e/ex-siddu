@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2> Get Query String Data</h2>
+        <p id="target"></p>
+        <script>
+             const urlParams=new URLSearchParams(location.search)
+             const con=urlParams.get('con')
+             const id=urlParams.get('id');
+             document.getElementById("target").innerHTML=`Con is ${con} and Id is ${id}`
+        </script>
+    </body>
+</html>

@@ -1,0 +1,427 @@
+--> Es 6 : Javascript introduced new features where we write less code and acheive many requirements which we are facing in the old Javascript.
+  -> let keyword :- It is a blocked scope. we define the local variable within a scope either it is conditions , loop , array , function etc. 
+    {
+        let x=10;// available within the block 
+    }
+    x;//x is not defined 
+    eg:
+      for(let i=1; i<=5; i++){
+         console.log(i);// 1 to 5
+      }
+      console.log(i);//i is not defined 
+    *** In var only in case of function if we define any variable inside the function with var keyword then it is local.
+      function abc(){
+         var x=10;//local variable
+      }
+      let x=10;
+      let x=20;//x is already declare
+      x=20;
+    -> constant :- It is a value that never be change , it is fixed and permanent.(Read Only)
+     const CONSTANT_NAME=value;
+     eg:
+     const API_URL="http://abc.com";
+     *** Difference between var , let and const ?
+
+    -> Template Literal :- with the help of backtick (``) we can render string and variable both inside the template literal.
+      eg:
+      let x=10;
+      let y=20;
+      let sum=x+y;
+      //old approach 
+      console.log("The sum of "+x+" and "+y+" is "+sum);
+      //template literal 
+      console.log(`The sum of ${x} and ${y} is ${sum}`);
+    -> Arrow function (=>) :- It is a new way to define functions. with the help of it the code is sort and concise.
+       syntex :
+       //1 line function 
+       let add=(a,b)=> (a+b);
+       //multiple line function 
+       let myFunc=(par)=>{
+         //logics 
+         return result;
+       }
+       eg:
+       let arr=[23,45,67,89];
+       let sum=0;
+       arr.forEach(val=> sum+=val);
+       //before 
+       arr.forEach(function(val){
+            sum+=val;
+       })
+    --> Spread Operator and Rest Parameter (...)
+      -> Spread Operator(...) :- It is used to spread or copy array or object in another array or object.
+        eg:
+          let arr=[2,3,4,5,6];
+          let arr1=[8,9,7]
+          let newArr=[...arr,...arr1];// 2 3 4 5 6 8 9 
+          let obj={name:'anuj',age:23};
+          let newObj={...obj,name:'anil',city:'delhi'}
+            {name:'anil',age:23,city:'delhi'}
+
+      -> Rest Parameter(...) :- We can pass any number of arguments in a function . The limitation is that rest parameter is the last formel parameter of the function.
+        When we require to pass arguments but were not sure how many we have to pass soin that scenarios we use rest parameter 
+        eg:
+        function myAdd(x,...args){
+             let sum=0;
+             args.forEach(val=> sum+=val);
+             return sum;
+         }
+         console.log(myAdd(2,3))
+         console.log(myAdd(2,3,4))
+         console.log(myAdd(2,3,4,5))
+         console.log(myAdd(2,3,5,6,7))
+
+        let , const , template literal , arrow function , spread , rest 
+    -> OOPS features in Javascript 
+       Object Oriented Programming Structure 
+          -> The advantage of the oops is reusability , memory management , sort code etc.
+        -> class :- class is a group of data members (variables) , member functions (functions) and its properties . It means class is a container where we store data.
+         syntex:
+            class className{
+               //methods
+               //properties 
+            }
+            eg:
+            class Person
+            {
+                //define method 
+                getData(){
+                   return "Qprofiles";
+                }
+            }
+          ** To access the properties of a class we have an object 
+          syntex:
+            const objname=new className();
+            eg:
+            const obj=new Person();
+            console.log(obj.getData());
+        -> constructor() :- is used to initilize the data. If we want to initilize any data when a object of a class is created then we use it. It automatically call when we create object of a class.
+          constructor(){
+             //initilize data 
+          }
+        -> Getter and Setter in Javascript (Accessor Property) :- It get or set the value of an object.
+          get : to define a getter method to get the property value 
+          set : to define a setter method to set the property value 
+      -> class inheritance :- It is used for reusability. It is a process in which we can access parent class properties in a child class.
+         -> extends keyword is used for inhertiance and super keyword is used inside a child class to access the properties of a parent class.
+         with the help of child class object we can access the properties of parent and child both
+
+      -> map() , filter() and reduce()
+        -> map() :- It applies a given function on all the elements of the array and returned the updated array.It id the simpler and shorter code instead of a loop.
+          syntex:
+             array.map(function)
+            eg:
+            let arr=[2,3,4,5,6];
+            let newArr=arr.map(val=> val*3);// 6 9 13 15 18
+          *** this method is used in react js to render all array and object.
+        -> filter() :- It filters the elements of the array that return false for the applied conditions and return the array with satisfy condition.
+          array.filter(function)
+          eg:
+           let arr1=[2,3,4,5,6];
+           let newArr1=arr1.filter(val=> val%2==0);// 2 4 6
+        -> reduce() : It reduces all the elements of the array to a single value by repeatedly applying a function.
+         eg:
+         let arr=[2,3,4,5,6];
+         let result=arr.reduce((a,b)=>{
+          console.log(a+"---"+b)
+           return (a*b);
+         })
+         console.log(result)
+    -> call() , apply() and bind()
+      -> bind() :- This method creates a new function.
+        let myObj={
+            name:"anuj";
+        }
+        let displayName={
+           name:"amit",
+           sayHi:function(){
+              console.log(this.name)
+           }
+        }
+      -> call() :- It calls a function with a given this value and arguments provided individually.
+
+  ***** Callback :- It is a function that is passed as an argument to another function and is called after the main function has finished its execution.It allow us to handle the results of an asynchronous operation in a non-blocking manner , which means that the program can continue to run while the operation is being executed.
+   asynchronous operations that take a significant amount of time to complete ,such as network request , file i/o , and database queries etc.
+   It allow us to continue executing code while the operation is being executed in the background.
+   ** callbacks are used to handle the results of asynchronous operations
+   eg:
+       function mainFunction(callback){
+           console.log("Performiung operations...");
+            setTimeout(()=>{
+                callback("Operation Complete")
+            },2000)
+       }
+       function callbackFunction(result){
+          console.log("Result : "+result);
+       }
+       mainFunction(callbackFunction)
+       ** Real time example of callback and nested callback 
+         -> we want to get the user details from database 
+         -> in behalf of user we want to get services of the user 
+         -> in behalf of services find the cost of all services 
+             one depend of another 
+             when user details are fetchn the services are fetch and then cost is fetch
+          ** whenever we use nested callback it hardly to manage errors and this problem is known as callback hell. To solve this callback hell problem javascript introduced promises in es 6.
+      -> Promise :- Promises are used to handle asynchronous operations in a managelable way.
+        It is an object that encapsulates the result of an asynchronous operations.
+          In javascript promise have 3 states 
+            . Pending 
+            . Fullfilled with a value 
+            . Rejected for a reason 
+            When we call promise , the state of a promise is pending , indicating that the asynchronous operation is in progress.Depending on the result of the asynchronous operation , the state changes to either fulfilled or rejected.
+          ** Promise return a value either fulfilled or rejected and promises are not cancellabel.
+            -> How we create a promise 
+              const promise=new Promise((resolve,reject)=>{
+                  let age=34;
+                  setTimeout(()=>{
+                     if(age>=18){
+                       resolve("Elligible")
+                     }
+                     else{
+                       reject("Not Elligible")
+                     }
+                  },2000)
+              })
+            -> How we consume promise 
+               -> then() : to get the value of promise when it id fullfilled , we can use then() method 
+               -> catch() :- If we want to get the error only when the state of the promise is rejected , we use catch() method .
+               eg:
+               promise
+               .then(res=> console.log(res))
+               .catch(err=> console.log(err))
+            -> The syntex is user-friendly and easy to read 
+            -> Error handling is easier to manage 
+              -> Javascript Promise Chaining 
+                  They are useful when we have to handle more than one asynchronous task, one after another, for that , we use promise chaining.
+                eg:
+                  const promise=new Promise((resolve,reject)=>{
+                     setTimeout(()=>{
+                       resolve(10);
+                     },2000)
+                  })
+                  promise 
+                    .then(res=>{
+                        console.log(res)
+                        return res*10;
+                    })
+                    .then(res=>{
+                       console.log(res)
+                       return res*20;
+                    })
+                    .then(res=>{
+                       console.log(res)
+                    })
+                    .catch(err=> console.log(err))
+          -> fetch() :- It is used to request data from a server. It is used to consume backend services or APIs. It return promise.
+            syntex :
+            //default we call the get apis 
+              fetch(url)
+              .then(res=> res.json())
+              .then(data=> console.log(data))
+              .catch(err=> console.log(data))
+              -> for fake APIS 
+               https://jsonplaceholder.typicode.com/
+               https://jsonplaceholder.typicode.com/posts
+
+          -> Assignment 
+             -> Consume all the APIs of jsonplaceholder and render data in your web page 
+          -> Async / Await function :- 
+             Async : It simply allows us to write promises-based code as if it was synchronous .It operates asynchronous via the event loop but it look like synchronousaly.So that it is easy to understand and more readable.
+             Await :- It is used to wait for the promise . It is used only with async function.
+              If we put async keyword before any function then it return promise.
+              ** to handle error in async/await we use try catch block 
+              eg:
+               async function fetchData(){
+                try{
+                 const API="http://jsonplaceholder.typicode.com/posts";
+                 const resData=await fetch(API);
+                 const data=await resData.json();
+                 console.log(data);
+                }
+                catch(err){
+                    console.log("Error : "+err);
+                }
+            }
+               fetchData();
+    -> Crud Application in Javascript (we consume APIs)
+      c : create 
+      r : read 
+      u : update 
+      d : delete 
+    -> ** JSON Server :- It is a node module that can use to create demo (fake) rest json web apis in less than a minute.
+      get , post , put , delete (in behalf of the json file) 
+       -> JSON :- stand for Javascript Object Notation . It is a standard text-based formet for representing structured data in the form of key value pair.
+       It is used to transform the data between 2 servers.
+       eg:
+       products.json 
+       {
+         "products":[
+           {"id":1,"name":"A","price":3456,"quantity":5},
+           {"id":2,"name":"B","price":4456,"quantity":6},
+           {"id":3,"name":"C","price":5456,"quantity":7}
+         ]
+       }
+       -> Download and install node js environment 
+         https://nodejs.org/en/download
+         -> To check node is install or not 
+           -> to cmd 
+             node -v 
+        -> install json-server 
+          -> open cmd 
+          npm install json-server --g 
+            server/products.json 
+               products.json 
+       {
+         "products":[
+           {"id":1,"name":"A","price":3456,"quantity":5},
+           {"id":2,"name":"B","price":4456,"quantity":6},
+           {"id":3,"name":"C","price":5456,"quantity":7}
+         ]
+       }
+          -> How we run json server 
+            open server folder in cmd 
+            json-server --watch products.json --port 3001 
+
+            JSON.stringify() :- used to parse noraml data into json string 
+            JSON.parse() :- parse json string into normal data
+    -> The promise involves chaining .then and .catch methods whereas Async Await uses a try-catch block that look more like synchronous code.
+    *** Using async/await results in more concise and eaiser.
+  *** callback vs promises vs async/await 
+
+  -> Bom :- browser object model 
+     Bom provides us with objects that expose the web browser functionality.
+     -> window :- global object 
+        window.alert("--")
+        window.document.write("--")
+     -> alert 
+     -> prompt 
+     -> confirm 
+     -> setTimeout 
+     -> setInterval 
+    -> location object :- It represents the current location (URL) of a document. we can access the location property of the window or document object.
+        -> redirect 
+           location.href="url"
+        -> location.protocol :- http:
+        -> location.host : localhost:8080
+        -> location.port : 8080 
+        -> location.pathname :- "/main/index.html"
+  ->  How we get Query String(params) in Javascript (pass data through URL)
+      http://localhost:8080/abc.html?con=1&id=123
+      const urlParams=new URLSearchParams(location.search)
+  -> for of and forin loop 
+    -> for(..in) loop :- It iterates over all enumerable properties of an object that are keyed by strings
+      eg:
+        const myObject={
+            name:"anuj",
+            age:23,
+            city:'delhi'
+        }
+        for(key in myObject){
+           console.log(key+"---"+myObject[key])
+        }
+        ** used for both array and object 
+    -> for (..of) loop :- works only for a iterable object (array and string)
+         const myObject={
+            name:"anuj",
+            age:23,
+            city:'delhi'
+        }
+        for(value of myObject){
+           console.log(value)
+        }// error myObject is not iterable 
+         const arr=[23,45,67,89];
+        for(key1 of arr){
+            console.log(key1)
+        }
+        *** for , while , do-while , forEach , for in , for of 
+    -> Math inbuild methods 
+    Math is global object 
+      Math.pow(value,2)
+      Discuss 
+    -> Closures(lexical scope)  Shallo copy and deep copy 
+    -> Generators , Symbols 
+      -> Interview related questions 
+         -> var vs let vs const 
+         -> getter and setter 
+         -> IIFE 
+         -> Event Bubling , capturing , debounce , throatling 
+         -> Inhertitance 
+         -> map , filter and reducer 
+         -> call , apply and bind 
+         -> callback , promise and async/await 
+
+  
+
+           
+           class XYZ 
+           {
+               get name=()=>{
+
+               }
+               set name=(new)=>{
+
+               }
+           }
+           const obj=new XYZ();
+           obj.name;//getting 
+           obj.name("sumit");//setting 
+           (function(){
+           })()
+  -> Closures:- It is the combination of a function bundled together (enclosed) with references to its surrounding state (lexical environment). A closure gives us access to an outer functions scope from an inner function.(we can access the properties and parameter of the outer function).
+    It is a function that preserves the outer scope in its inner scope.
+      eg:
+      function helloClosure(message){
+         return function(name){
+             return message+" "+name;
+         }
+      }
+      let sayHi=helloClosure("Hi");//outer 
+      let sayHello=helloClosure("Hello");
+      console.log(sayHi("Sumit"));//Hi Sumit 
+      console.log(sayHi("Amit"));//Hi Amit 
+      *** sayHi() and sayHello() are closures. They share the same function body but different scopes. 
+
+  -> *** Generators :- It provides a new way to work with functions and iterators.
+     -> Using a generator 
+        1. we can stop the execution of a function from anywhere inside the function 
+        2. and continue executing code from a halted position.
+        3. and return multiple values 
+    -> How we create generator functions 
+       with *(astrick ) sign 
+       //define a generator function 
+          function * generator_function(){
+             -----
+          }
+       // creating a generator 
+       const generator_obj=generator_function();//return generator object
+          The objects of a generator functions are called generators 
+    -> Using yield keyword to pause execution 
+      Using yield keyword we can pause the execution of the generator function .
+       to access/execute  the yield we have next() function.
+       ** when yield is encountered, the program returns the value and pauses the generater function.
+        next() give us an object {
+           value:'',
+           done:true|false
+        }
+
+        next() : return a value of yield 
+        return() : return a value and terminates the generator 
+
+        yield : return the value and halts the function but doesnot terminate the function .Only available in genrator functions .
+      -> Generators let us write cleaner code while writing asynchronous tasks 
+      -> They provide an easy way to implement iterators 
+      -> Generators execute its code only when required 
+      -> Generators are memory efficient 
+    ** 
+     https://www.programiz.com/javascript/library/array
+     https://www.programiz.com/javascript/library/string
+     https://www.programiz.com/javascript/library/math
+     https://getbootstrap.com/docs/5.0/getting-started/introduction/
+
+     React Js (Front End) (html , css)
+     Node Js (Express Js) :- (Backend API)
+     MongoDb (Database )
+       React Js + Node Js + MongoDb = Develop a full stack web application in javascript 
+
+
+

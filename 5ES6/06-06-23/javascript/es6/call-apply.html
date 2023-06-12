@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Bind example</title>
+</head>
+
+<body>
+    <h2> call Example</h2>
+    
+    <script>
+       let myData={
+          fname:"anuj",
+          lname:"singh",
+        getFullName:function(){
+            return `${this.fname} ${this.lname}`
+        }
+       }
+       let getDetails=function(a,b){
+          console.log(this.getFullName()+' loves '+a+" and "+b)
+       }
+       getDetails.call(myData,'cricket','music');
+       getDetails.apply(myData,['football','dancing']);
+   
+    </script>
+</body>
+
+</html>

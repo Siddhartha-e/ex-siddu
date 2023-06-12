@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Intervals Example</title>
+    </head>
+    <body>
+        <h2>Image Slider Example</h2>
+          <p>
+              <img src="./images/1.jpg" width="80%" height="200" id="imm"/>
+          </p>
+        <script>
+            ind=0;
+            function slider(){
+                var arr=["./images/2.jpg","./images/3.jpg","./images/4.jpg","./images/1.jpg"];
+                var imm=document.getElementById("imm");
+                imm.setAttribute("src",arr[ind]);
+                ind++;
+                if(ind==4){
+                    ind=0;
+                }
+            }
+            setInterval(slider,4000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Events</title>
+    </head>
+    <body onload="changeBgColor('green')">
+        <h2> Events Example</h2>
+        <button onclick="changeBgColor('red')" onmouseover="changeBgColor('purple')" onmouseout="changeBgColor('white')"> Change bgColor</button>
+        <script>
+            //define
+           function changeBgColor(color)
+           {
+              document.bgColor=color;
+           }
+        </script>
+    </body>
+</html>

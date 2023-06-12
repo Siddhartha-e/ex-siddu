@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Dom example</title>
+    </head>
+    <body>
+        <h2> Dom Example (get element by id )</h2>
+        <button onclick="xyz()"> Click Here</button>
+        <p id="target">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quasi id! Sint nihil, maiores dolor ea, a sapiente accusamus amet debitis, sit saepe rem illum quisquam ut error laudantium adipisci.
+        </p>
+        <script>
+          function xyz(){
+             //access para element 
+             var para=document.getElementById("target");
+             //to get data of the para element 
+             var data=para.innerHTML;
+             alert(data)
+             //to set the content of the para
+             para.innerHTML="It stand for Document Object Model. Javascript accesses the contents of a webpage making use of DOM which is created by the browser when a webpage is rendered."
+
+          }
+        </script>
+    </body>
+</html>

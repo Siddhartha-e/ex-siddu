@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Add Product</title>
+    </head>
+    <body>
+        <h2> Add Product</h2>
+        <form method="post" id="myForm">
+            Name : <input type="text" id="name"/><br/>
+            Price : <input type="text" id="price"/><br/>
+            Quantity : <input type="text" id="quantity"/><br/>
+            <input type="submit" value="Add"/>
+        </form>
+        <script>
+            let myForm=document.getElementById("myForm");
+            myForm.addEventListener("submit",(event)=>{
+                 event.preventDefault();
+                 let name=document.getElementById("name").value;
+                 let price=document.getElementById("price").value;
+                 let quantity=document.getElementById("quantity").value;
+                 let formData=JSON.stringify({name:name,price:price,quantity:quantity});
+                 let API="http://localhost:3001/products"
+                 fetch(API,{
+                    method:'POST',
+                    body:formData,
+                    headers:{
+                        'Content-Type':'application/json; charset=UTF-8'
+                    }
+                 })
+                 .then(res=> res.json())
+                 .then(data=>{
+                     if(data){
+                         alert("Product added");
+                         window.location.href='index.html'
+                     }
+                 })
+                 .catch(err=> console.log(err) )
+            })
+        </script>
+    </body>
+</html>

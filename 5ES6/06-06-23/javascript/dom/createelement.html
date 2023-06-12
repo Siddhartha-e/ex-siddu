@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Dom example</title>
+    </head>
+    <body>
+        <h2> Dom Example (create element )</h2>
+     
+        <button onclick="xyz()"> Click Here</button>
+        <script>
+          function xyz(){
+            var div=document.createElement('div');
+            div.innerHTML='<p> Hello guys example of create element </p>';
+            document.body.appendChild(div);
+          }
+        </script>
+    </body>
+</html>

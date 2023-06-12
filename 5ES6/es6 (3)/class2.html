@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Class Example</title>
+    </head>
+    <body>
+        <h2> Class Example</h2>
+        <script>
+            class Car{
+                 constructor(){
+                    this.speed=50;
+                 }
+                 acc(){
+                     this.speed+=70;
+                 }
+                 checkSpeed(){
+                    console.log(`The speed of a car is ${this.speed}`)
+                 }
+            }
+            const obj=new Car();//instance of class
+            obj.checkSpeed();//50
+            obj.acc();//+70
+            obj.checkSpeed();//120
+        </script>
+    </body>
+</html>

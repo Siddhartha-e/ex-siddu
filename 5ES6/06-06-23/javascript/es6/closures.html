@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Closure Example</title>
+    </head>
+    <body>
+        <h2> Closure Example</h2>
+        <script>
+           function helloClosure(message){
+              return function(name)//closure 
+         {
+             return message+" "+name;
+         }
+      }
+      let sayHi=helloClosure("Hi");//outer 
+      let sayHello=helloClosure("Hello");
+      console.log(sayHi("Sumit"));//Hi Sumit 
+      console.log(sayHi("Amit"));//Hi Amit 
+        </script>
+    </body>
+</html>

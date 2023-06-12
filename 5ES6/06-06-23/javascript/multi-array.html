@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2> Multi Array</h2>
+        <script>
+            var empDetails=[
+                   ["A", 24 , 78999],
+                   ["B", 56 , 88888],
+                   ["C" , 45, 56789]
+               ];
+              // document.write(empDetails[1][0]);
+              empDetails.forEach(function(emp){
+                   emp.forEach(function(val){
+                     document.write(val+" ")
+                   })
+                   document.write("<br/>");
+              })
+        </script>
+    </body>
+</html>

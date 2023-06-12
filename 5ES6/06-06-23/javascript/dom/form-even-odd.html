@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Even Odd</title>
+    </head>
+    <body>
+        <h2> Even Odd Example </h2>
+        <form method="post" id="myForm">
+            Number : <input type="text" id="number"/> <br/>
+            Result : <input type="text" id="result"/> <br/>
+            <input type="submit" value="Send"/>
+        </form>
+        <script>
+             var myform=document.getElementById("myForm");
+             myform.addEventListener("submit",function(event){
+                event.preventDefault();
+                var number=parseInt(document.getElementById("number").value);
+                if(number%2==0){
+                    result="Even"
+                }
+                else{
+                    result="Odd"
+                }
+                document.getElementById("result").value=result;
+             })
+        </script>
+    </body>
+</html>

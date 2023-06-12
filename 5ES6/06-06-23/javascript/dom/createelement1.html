@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Dom example</title>
+    </head>
+    <body>
+        <h2> Dom Example (create element ) </h2>
+
+       <ul id="menu">
+          <li> Home </li>
+       </ul>
+       <button onclick="xyz()"> Click Here</button>
+        <script>
+            var arr=['Products','Categories','Gallery'];
+            var menu=document.getElementById("menu");
+            arr.forEach(function(val){
+                var li=document.createElement('li');
+                li.textContent=val;
+                menu.appendChild(li);
+            })
+            function xyz(){
+                var h2=document.querySelector("h2");
+                var p=document.createElement("p");
+                p.textContent="Hello Guys !";
+                //h2.after(p);
+                // h2.append(p)
+                h2.prepend(p)
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Class Example</title>
+    </head>
+    <body>
+        <h2> Class Getter Setter Example</h2>
+        <script>
+           class Person{
+              constructor(fname){
+                 this.fullName=fname;
+              }
+            //   getName(){
+            //     return this.fullName;
+            //   }
+            //   setName(newName){
+            //     this.fullName=newName;
+            //   }
+            //getter and setter implementation 
+             get name(){
+               return this.fullName;
+             }
+             set name(newName){
+                 this.fullName=newName;
+             }
+           }
+           const obj=new Person("amit");
+        //    console.log(obj.getName());//amit 
+        //    obj.setName("anil");
+        //    console.log(obj.getName());//anil 
+        console.log(obj.name);//getter amit
+        obj.name="anil";//setter 
+        console.log(obj.name);//getter anil
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Intervals Example</title>
+    </head>
+    <body>
+        <h2>Stop Watch Example</h2>
+        <p id="target"></p>
+        <button id="start"> Start</button>
+        <button id="stop"> Stop</button>
+        <script>
+          var start=document.getElementById("start");
+          var stop=document.getElementById("stop");
+          start.addEventListener("click",function(){
+               interval=setInterval(counter,1000)
+          })
+          stop.addEventListener("click",function(){
+             clearInterval(interval)
+             count=0;
+           })
+           count=0;
+           function counter(){
+              count++;
+              document.getElementById("target").innerHTML=count
+           }
+        </script>
+    </body>
+</html>

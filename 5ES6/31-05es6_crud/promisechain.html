@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Promise example</title>
+</head>
+
+<body>
+    <h2>Promise Example</h2>
+    <script>
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(10);
+            }, 2000)
+        })
+        promise
+            .then(res => {
+                console.log(res)
+                return res * 10;
+            })
+            .then(res => {
+                console.log(res)
+                return res * 20;
+            })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => console.log(err))
+    </script>
+</body>
+
+</html>

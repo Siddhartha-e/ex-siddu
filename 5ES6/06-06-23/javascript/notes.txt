@@ -1,0 +1,738 @@
+-> Javascript :- It is an client side scripting language used to apply some dynamic features in our applications like some animation , event handling , dom manupulation , validations etc.
+   -> client side language :- which are execute by the browser. 
+   -> scripting language :- interpriting language 
+        -> Assembler :- convert assembly language to machine level (cobol)
+        -> Compilar :- high to low , low to high (c,c++,.net etc)
+        -> Interpritor :- line by line (scripting language) (Javascript,php) 
+    -> Javascript have its own specification calles ECMAScript.(ES)
+    Javascript can execute not only in the browser , but also on the server (node js)
+    -> Javascript code is run on Javascript engine 
+    -> All browsers has an embedded Javascript engine.
+      -> Chrome , Opera , Edge :- v8 
+      -> Firefox :- SpiderMonkey 
+      -> IE :- Chakra 
+    -> How do engine works 
+       1. The engine read the script 
+       2. Then it converts the script to machine code 
+       3. and the machine code runs , pretty fast 
+    -> We write the Javascript code in <script> tag 
+    <script>
+    </script>
+    -> It is case sencitive language 
+      a   -  a 
+      A ---- A 
+    -> The extension of Javascript is .js 
+    -> How we run Javascript program 
+       -> Internal way 
+           home.html 
+           <html>
+             <head>
+             ---
+             </head>
+             <body>
+               ---
+              <script>
+                 Javascript code 
+              </script>
+            </body>
+           </html>
+        -> external way 
+           first.js 
+              Javascript code 
+             home.html 
+           <html>
+             <head>
+             ---
+             </head>
+             <body>
+               ---
+              <script scr="./first.js"></script>
+            </body>
+           </html>
+        -> comments :- are used to describe the code.(implementation is hide)
+           -> single line :- // 
+           -> multiple line :- /*  */
+        -> How we write content in Javascript (output)
+           document.write("---");//display in a browser 
+           console.log("--");//display in console / used for debug the code 
+             ** in console we can find the Javascript errors 
+
+        -> Code structure of Javascript 
+          document.write("---");
+          ; :- It is not compulary to end statement, but if we want we can use it for good program structure 
+        -> Old Javascript | Vanilla Javascript | Es 5 
+        -> Javascript is a programming language 
+          -> Variables :- are the temporary memory location which hold input data.we can change the Variables value as per the requirement.
+           They are used to store the information.
+           -> How we create a variable 
+              // old Javascript es5 
+                var varname=value;
+                -> Naming convention to define variable name 
+                  1. The name must contain only letters , digit or symbols $ and _ 
+                  2. The first character must not be a digit 
+                ** When the name contains multiple words , camelCase is commanly used.
+                eg:
+                  var salary=12345;// number
+                  var empName="anuj";// string 
+                  var empSalary=56789;
+            -> Datatypes :- A value in Javascript is always of a certain type eg string or number.
+               They are allocate at run time as per the variable value;
+                 -> Types of datatypes 
+                   1. number - 123, 67.89 
+                   2. BigInt :- for larger interger vaue 
+                   3. string : " " , ' ' , ``
+                   4. boolean :-  true | false 
+                   5. null :- it represents nothing , empty 
+                   6. undefined : value is not assignend 
+                   7. Objects and Symbols 
+                   -> How we find the datatype of a variable 
+                      typeof variablename :- datatype of a variable  
+            -> Operators :- to perform operations 
+              -> Arthematic operators :- used for calculation 
+                 + :- a+b 
+                 - :- a-b 
+                 * :- a*b 
+                 / :- a/b : quotient 
+                 % :- a%b : reminder 
+                   9%2 // 1
+                   8/2 // 4
+                ** :- exponentiation 
+                 a**b a to the power b 
+                  (2 ** 4) // 16 
+              -> string concatenation (+)
+              -> Assignmemnt Operator 
+                  = : a=10;
+                  += :- a+=b -> a=a+b 
+                  -= 
+                  /= 
+                  %=   
+              -> Chaining assignments 
+                a=b=c= 2+4;
+              -> increment / decrement operators 
+                 ++ :-
+                   counter=5;
+                   counter++;//6
+                 -- 
+             -> comparision 
+               > :- a>b 
+               < :- a<b 
+               >= :- a>=b 
+               <= :- a<=b 
+               == :- a==b (check only values)
+               != 
+               === :- a===b (check both value and datatype , when match it return true)
+               !== 
+               eg: 
+               var a=10;
+               var b="10";
+               if(a==b) // true 
+               if(a===b) // false 
+            -> Logical Operators 
+              && :- when all conditions are correct then it return true 
+                eg:
+                  if(a>b && a>c) {
+                      // A is greater 
+                  } 
+              || :- when anyone condition is correct then return true 
+                 eg:
+                   if(name=="anuj" || name=="amit"){
+                     //elligible 
+                   }
+              ! :- when incorrect then true , used only in 1 condition 
+                eg:
+                if(!(city=="noida")){
+
+                }
+          eg:
+            -> Wap to assign 3 digit number in a variable , reverse it and also find the sum of the digit of a number ? 
+               hint 
+                num=234;
+                rev=432;
+                sum=9;
+            ** parseInt() :- convert into interger
+        -> Assignement 
+          ->   Wap to assign 5 digit number in a variable , reverse it and also find the sum of the digit of a number ? 
+          -> Wap to assign 2 numbers in 2 variables and swap them (interchange) ?
+             1. with the help of 3rd variable 
+             2. without help of 3rd variable 
+                var a=10;
+                var b=20;
+                b=10;
+                a=20;
+           -> Assignment 
+             var a=10;
+             var b=20;
+             //1st 
+             temp=a;//10 
+             a=b;//20
+             b=temp;//10 
+             //2nd 
+              a=a+b;//30
+              b=a-b;//10 
+              a=a-b;//20 
+
+        -> Conditions | selections (return boolean value)
+           -> if else :- It is used for 1 or 2 condition.
+              syntex:
+                if(condition){
+                    statement;
+                }
+                else{
+                  statement;
+                }
+                eg:
+                 var age=24;
+                 if(age>=18){
+                    document.write("Elligible");
+                 }
+                 else{
+                    document.write("Not Elligible");
+                 }
+            -> if else if else :- if we have more then 2 conditions then we use if else if else 
+               syntex: 
+                 if(condition){
+                   statement
+                 }
+                 else if(condition){
+                    statement
+                 }
+                 else if(condition){
+                   statement
+                 }
+                 ---
+                 ---
+                 else {
+                    statement
+                 }
+             -> Wap to assign 3 values in 3 variables and find which is greater ?
+        -> Nested if :- if within another if is known as nested if. if all the if conditions are correct then it true, otherwise we have else for every condition. 
+          syntex:
+             if(conditon){
+                if(condition){
+                   if(condition){
+                      statement
+                   }
+                   else{
+                   }
+                }
+                else{}
+             }
+             else{
+
+             }
+             eg:
+             var email="anuj@gmail.com";
+            var password="12345";
+            if(email==="anuj@gmail.com"){
+                if(password==="12345"){
+                    document.write("Welcome : "+email);
+                }
+                else{
+                    document.write("Enter correct password");
+                }
+            }
+            else{
+                 document.write("Enter correct email");
+            }
+        -> Switch Case :- It is used to perform different actions based on different conditions.It is multi decision making. The performance of switch is fast then if else.
+           syntex:
+              switch(expression){
+                  case val : code 
+                     break;
+                  case val : code 
+                     break;
+                  ---
+                  ---
+                  default : code;// if there is no match then it execute default
+              }
+              ** break is used to terminate the switch case 
+        -> Assignments 
+           1. if else 
+             -> Wap to assign a number in a variable and find it is even or odd ? 
+                Hint 
+                  num%2===0 // even 
+           2. if else if else 
+             -> Wap to assign 5 subject marks in 5 variables and its total , percentage and grade ?
+                Hint : 
+                  total= 5 subject 
+                  percentage 
+                  grade
+                    per>= 80  A 
+                    per>=60  <80  B 
+                    per>=45 <60  C 
+                    Fail 
+            3. switch case 
+             -> Wap a to assign a monthcode between 1 to 12.
+                1 - Jan 
+                12 - Dec 
+                  If other then range it display invalid month code 
+  -> Looping (Iteration) :-It is a process for executing multiline statement in a single line or repetation of statement.
+    -> Types of loops 
+      -> for loop 
+      -> while loop 
+      -> do while loop 
+
+      -> for loop :- in this loop the condition is check at the starting of the loop , if condition correct then loop is executed otherwise terminated.
+        syntex:
+           for(initilization ; condition ; increment/decrement){
+               statement ;
+           }
+           eg:
+           for(i=1; i<=5 ; i++){
+               document.write("Qprofiles <br/>");
+           }
+           Qprofiles
+           Qprofiles
+           Qprofiles
+           Qprofiles
+           Qprofiles
+      -> print between 10 to 1
+        for(i=10 ; i>=1 ;i--){
+            document.write(i+"<br/>")
+        }
+
+      -> Wap to display even numbers between 1 to 100 ? 
+        solution : 
+          for(i=1 ; i<=100 ;i++){
+                if(i%2==0){
+                    document.write(i+"<br/>")
+                }
+            }
+      -> Wap to assign a value in a variable and display its table upto 10 ?
+        Hint 
+         num=5 
+         5*1=5
+         --
+         5*10=50
+
+    -> While loop :- It executed while a condition is true. It depend on the condition because it return boolean (true/false). In this loop also the condition is check at the start. 
+       syntex:
+         while(condition){
+            statement / code ;
+         }
+         eg:
+         i=1;
+         while(i<=5){
+           document.write("Qprofiles<br/>");
+           i++;
+         }
+        -> Wap to assign a number in a variable and reverse it and also find the sum of the digit of the number ?
+         -> solution :
+          var num=123456;
+           var rev=0;
+           var sum=0;
+           while(num>=1){
+              x=num%10;// 4 3 2 1
+              rev=(rev*10)+x; //4 43 432 4321
+              sum=sum+x; //4 7 9 10
+              num=parseInt(num/10); //123 12 1
+           }
+     document.write("The reverse is "+rev+" and sum of digits is "+sum);
+
+     --> do-while :- this loop execute atleast once while a condition is correct or not. In this loop the condition is check at the end of the loop.
+        syntex :
+           do{
+              statement/code;
+           }(condition);
+           eg:
+           i=1;
+           do{
+              document.write("Qprofiles <br/>");
+              i++;
+           }while(i>=10);
+
+  ->  nested loop :- It is a loop that is present inside another loop.The inner loop(nested loop) is executed first then outer.
+     syntex:
+         //outer 
+         for(ini; condition; inc/dec){
+            //inner
+            for(ini ; condition ; inc/dec){
+                statement
+            }
+         }
+         ** outer loop represent row and inner represent column
+      -> Assignments 
+         -> Wap to find prime numbers between 1 to 100 ? 
+         -> Wap to display the feboniccie series upto 10 ?
+            Hint 
+             0 1 1 2 3 5 8 13 21 34 
+         -> nested loop 
+               *
+              **
+             *** 
+            **** 
+           ***** 
+
+           *****
+           *   *
+           *   *
+           *   *
+           *****
+      -> Array :- array is an group of elements which is used to store multiples values of any type in a single variable. (hetrogenous data)
+        Values are store in a seperate indexs and array index is start from 0.
+         syntex:
+          var arryname=new Array(val,val,val,...)
+            or 
+          var arryname=[val,val,val,...];//prefer
+
+          eg:
+              var arr=[234,"anuj","suraj", true ]
+                  arr[1];// anuj 
+                  arr[3];//true 
+               *To find length of an array we have arrayname.length 
+                 arr.length 
+
+         -> Wap to assign 10 values in an array , find there sum and also find the largest value from an array ? 
+         -> solution 
+            var arr=[23,4,5,6,7,77,8,9,1,44];
+             var sum=0;
+             var lar=0;
+             for(i=0; i<arr.length; i++){
+                 sum=sum+arr[i];
+                 document.write(arr[i]+"<br/>");
+                 //logic for largest value
+                 if(lar<arr[i]){
+                     lar=arr[i]
+                 }
+             }
+            document.write("The sum is "+sum);
+            document.write("<br/> The largest value is "+lar);
+      --> ** forEach () :- this loop is used only for an array. Here the loop is going on untill the array is null. 
+      syntex :
+        arrayName.forEach(function(val,index){
+             
+        })
+        eg:
+         var arr=[2,3,4,5,6];
+         var sum=0;
+         arr.forEach(function(val){
+             sum=sum+val;
+         })
+         document.write("The sum is "+sum);
+      -> multi dimension array (2d array)(array with array)
+        
+        var empDetails=[
+           ["A", 24 , 78999],
+           ["B", 56 , 88888],
+           ["C" , 45, 56789]
+        ];
+
+      -> alert() :- to display data in a alert box (dialoage box)
+        alert("Hello");
+      -> prompt() :- to input data at runtime by user 
+        prompt("Enter number 1") :- it accept values in the form of string.
+        To conver string into number 
+          -> parseInt()
+          -> Number()
+        eg:
+         -> input 2 values and find sum 
+             var num1=parseInt(prompt("Enter number 1"));
+            var num2=parseInt(prompt("Enter number 2"));
+            var sum=num1+num2;
+            alert("The sum is "+sum);
+            
+         -> Assignment
+           -> Wap to assign 5 values in an array and also assign single value in a variable and find this single value is present in array or not ? 
+
+        -> function :- It is set of code to execute. It is used for reusability.
+        If we have need in our application a reusable code then we define the function and use many time in our application.
+          define 1 time and use many time.
+          -> Every function should return a value 
+          -> Function return only 1 value at a time 
+          -> Types of function 
+             -> user function function (custom)
+             -> predefine (inbuild) :- alert() , parseInt() etc.
+
+             -> User define function 
+                 syntex :
+                    define 
+                    //without parameter
+                    function functionName()
+                    {
+                       code
+                    }
+                    //with parameter
+                    function functionName(para)
+                    {
+                       code
+                    }
+                    //calling 
+                      functionName();//without 
+                      functionName(argument);//with 
+                  eg:
+                  function myData(){
+                      alert("Hello function")
+                  }
+                  myData();
+                 //define 
+                  function add(num1,num2)
+                  {
+                      var sum=num1+num2;
+                      return sum;
+                  }
+                  alert(add(3,4));//7 
+            --> Task 
+              -> Wap to create a function to check number is even or odd ?
+
+              function evenOdd(n)
+              {
+                 if(n%2==0){
+                    return "Even"
+                 }
+                 else{
+                    return "Odd"
+                 }
+              }
+              var res=evenOdd(5);
+              alert(res);
+            -> Events :- are used to perform a specific task 
+          Events         Event Handler 
+          click            onclick 
+          dblclick
+          mouseover 
+          mouseout 
+          keyup
+          keydown 
+          keypress 
+          blur 
+          focus 
+          change
+          load
+          reload
+          submit 
+          scroll 
+
+          -> Wap to define a function to find the sum of the digit of the number ?
+              function sumOfDigit(num)//define
+              {
+                  sum=0;
+                  while(num>=1){
+                    x=num%10;
+                    sum=sum+x;
+                    num=parseInt(num/10);
+                  }
+                  return sum;
+              }
+              var num1=parseInt(prompt("Enter number"));
+              var res1=sumOfDigit(num1);//call
+              var res2=sumOfDigit(1234);//call 
+          -> predefined functions 
+             -> Array 
+               https://www.geeksforgeeks.org/javascript-basic-array-methods/
+             -> String 
+               https://www.geeksforgeeks.org/javascript-string-methods/
+             -> Math 
+               https://www.geeksforgeeks.org/javascript-math-object/
+             -> Date 
+
+          -> **** DOM 
+          https://www.javascripttutorial.net/javascript-dom/
+
+          -> 
+            function myFunction()
+            {
+                 code 
+            }
+
+            -> 1 
+            myFunction()
+            -> 2
+            myFunction()
+            -> 3
+            myFunction()
+              variables :- temporary data 
+              datatypes :- allocate at runtime 
+              operators :- to perform operation 
+              conditions :- if else , if else if else , switch case 
+              looping (iteration) :- for loop , while loop , do-while 
+              array :- group of elements. store multiple values in a single variable 
+              function :- reusability
+          --> *** Javascript DOM :- It stand for Document Object Model. Javascript accesses the contents of a webpage making use of DOM which is created by the browser when a webpage is rendered.
+            *** Javascript is used for runtime dom manupulation.
+            Javascript uses DOM to perform multiple functions such as creating and deleting elements on the web page
+            --> Selecting elements 
+              -> ** getElementById() :- select an element by id.
+              -> innerHtml :- get and set the HTML content of an element 
+              -> textContent :- get and set the text content of a node 
+            -> some more functions to select elements 
+              getElementsByName():- select elements by name (return array)
+                 var x= getElementsByName('gender')
+              getElementsByTagName():- select elements by a tag name (array)
+                var x= getElementsByTagName('h1')
+              getElementsByClassName():- select elements by a class name (array)
+               var x= getElementsByClassName('xyz')
+      -> createElement() :- create a new element at runtime.
+      -> appendChild() :- append a node element of a specified parent lement 
+
+      -> Attributes 
+        -> setAttribute() :- set the value of a specified attribute on a element.
+          syntex:
+           setAttribute(name,value);
+        -> getAttribute() :- get the value of an attribute on the element 
+             getAttribute(name)
+        -> removeAttribute() :- remove an attribute from an element 
+            removeAttribute(name)
+      -> stype property :- get or set inline styles of an element 
+         element.style.property=value 
+         eg:
+         para.style.color='red'
+         ** use camelcase as property 
+          background-color --- backgroundColor
+        -> classList :- to add css class at runtime 
+         element.classList.add('classname');
+
+      *** Form Handling 
+         accessing the form , getting values of the form elements , validating form data and submitting the form 
+         eg:
+         <form method="post" id="myForm">
+             <input type="submit" value="Send"/>
+        </form>
+        <script>
+            var myform=document.getElementById("myForm");
+            myform.addEventListener("submit",function(event){
+              //stop form submission 
+                event.preventDefault();
+              alert("hello")
+              //handle the form data
+            })
+
+        </script>
+        ** when we click on the submit button the form is submitted to the server.
+        To stop the form being submitted , we have preventDeafult() method of the event object.
+        -> Accessing form fields 
+            getElementById() (prefer)
+            getElementsByName() 
+            querySelector()
+            -> property value :- to get or set value from form fields
+            ** when we get the values of the form fields , they are in the string formet.
+            parseInt()
+            Number()
+        -> Wap to input a number from form field and find it is even or odd ?
+        -> Task 
+           -> Wap to input 2 number from 2 text field and find which is greater ?
+
+             if(num1>num2){
+               result="Number 1 is greater";
+             }
+             else{
+              result="Number 2 is greater";
+             }
+        ->** Validation in javascript :- It is just like a restriction in a form fields to check the user input is in correct formet or not .
+          The data entered into a form needs to be in the right formet and certain fields need to be filled before form submission.
+            -> types of validation 
+              -> client side : javascript 
+              -> server side : node , java , php , .net 
+            -> Regular Expression :- It is also known as RegEx .It is a sequance of characters that forms a search pattern.
+               start :- /^ 
+               [] :- pattern eg: [a-z 0-9 | ]
+               {} :- range 
+               + :- compulsary 
+               | :- or 
+               end :- $/
+               eg:
+               var regFname=/^[a-z]+$/;
+               var regFname=/^[a-z]{2,10}$/;
+               var mobile=/^\d{10}$/
+               var mobile=/^[0-9]{10}$/
+                 test() :- used to test for the match in the string 
+
+            Assignment 
+        -> Validate a form 
+        Fname (only alphabate allow)
+        Lname (only alphabate allow)
+        Email (proper email)
+        Password (min 6 max 20)(a-z0-9_)
+        Mobile (proper 10 digit start with betwwen 6 to 9)
+        Remarks (minimum 20 chanracters)
+               Submit 
+        *** Complete all previous assignment with the help of forms .
+    -> Objects :- It allows us to store multiple collection of data in the form of properties and method.(key value formet)
+      syntex :
+        var objname={
+           key:value,
+           key:value
+        }
+        eg:
+        var obj={
+            fname:'anuj',//property
+            lname:'singh',
+            abc:function() //method
+            {
+               ---
+            }
+        }
+        ** to access the property of an object 
+          objname.propertyname
+            eg:
+          obj.fname;
+          obj.abc();
+          ** this keyword : used to access the properties of the current object
+          ** when we define an object the keys are not in quotes 
+    -> Javascript Intervals and Timers 
+       If we want to call some methods or expressions in some interval of time then we need interval methods.
+       -> setInterval() :- This method continues calling the function until its closed.Call regurally as per the time interval 
+         eg:
+           setInterval(exp|method,interval);(call again an again)
+           eg:
+         interval=setInterval(xyz,4000);//xyz method is call in every 4 second 
+       -> clearInterval() :- to stop a set interval 
+          clearInterval(interval)
+       -> setTimeout() :- call only one time after a specified interval 
+         eg:
+           setTimeout(xyz,4000);//call only 1 time after the interval 
+      -> Assignment 
+        -> Wap to change the background color of a web page in after every 3 seconds ?
+      -> Different Types of function 
+        1. Named Function :- simple function which we define 
+           function oddOrEven(number){
+              if(num%2==0){
+                 return "Even";
+              }
+              else{
+                 return "Odd"
+              }
+           }
+           oddOrEven(5);//Odd 
+        2. Anonymous function :- It don't have name. They need to be tied to something : variable or an event to run.
+          eg:
+          var oddOrEven=function(number){
+            if(num%2==0){
+                 return "Even";
+              }
+              else{
+                 return "Odd"
+              }
+          }
+          eg2:
+          btn.addEventListener("click",function(){
+
+          })
+        3. IIFE : Immediately invoked function expression ()
+           It runs as soon as the browser encounters it.The benifit of this function is that it runs Immediately where it's located in the code and produces a direct output.
+           eg:
+           let message=(function(){
+              var name="anuj";
+              console.log(name);
+           })();
+
+      -> Prototype :  It is an object that is associated with every functions and objects by default in Javascript.
+          function -------> prototype 
+          If we want to add new properties at later stage to a function which will be shared across all the instances then we use prototype.
+      ** ECMAScript 6 |7 (Es 6)
+      https://www.geeksforgeeks.org/introduction-to-es6/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
